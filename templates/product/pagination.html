@@ -1,0 +1,40 @@
+<div class="u-s-p-y-60">
+
+    <!--====== Pagination ======-->
+    <ul class="shop-p__pagination">
+        
+        <li>
+            <a class="" {% if product.has_previous %} href="?page=1" {% endif %}>&laquo; Start</a>
+        </li>
+        
+
+
+        {% if product.has_previous %}
+        <li>
+            <a class="fas fa-angle-left" href="?page={{product.previous_page_number}}"></a>
+        </li>
+        {% endif %}
+
+
+        {% for page in paginator.page_range %}
+        {% if product.number > page|add:"-2" and product.number < page|add:"+2" %}
+        <li class="is-{% if product.number == page %}active{% endif %}">
+            <a href="?page={{page}}">{{page}}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+
+        {% if product.has_next %}
+        <li>
+            <a class="fas fa-angle-right" href="?page={{product.next_page_number}}"></a>
+        </li>
+        {% endif %}
+        
+
+        <li>
+            <a class="" {% if product.has_next %} href="?page={{paginator.num_pages}}" {% endif %}>End &raquo;</a>
+        </li>
+        
+    </ul>
+    <!--====== End - Pagination ======-->
+</div>

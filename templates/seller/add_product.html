@@ -1,0 +1,204 @@
+{% extends "./base.html" %}
+
+{% block content_header %}
+        <div class="content-header row">
+          <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Add Product</h3>
+          </div>
+          <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+              <div class="breadcrumb-wrapper mr-1">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">Product
+                  </li>
+                  <li class="breadcrumb-item active">Add Product
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock content_header %}
+
+{% block content_type %}
+<div class="row">
+  <div class="col-12 mt-3 mb-1">
+    <h4 class="text-uppercase">Add Product</h4>
+    <p>Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match
+      multiple
+      content types to create the card you need.</p>
+  </div>
+</div>
+{% endblock content_type %}
+
+{% block body_content %}
+
+<div class="row match-height">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-body">
+          <h4 class="card-title">Basic Inputs</h4>
+          <!-- <h6 class="card-subtitle text-muted">Support card subtitle</h6> -->
+        </div>
+
+        <div class="card-body">
+          <div class="form-container" style="justify-content: center;">
+
+            <form class="form">
+              {% csrf_token %}
+              <div class="form-body">
+                <!-- --------------------Product Title And Quanity Section------------------------------------------------ -->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="form-group">
+                        <label for="donationinput1" class="col-form-label">Product Title</label>
+                        <input type="text" id="donationinput1" class="form-control" placeholder="First Name"
+                          name="fname">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="form-group">
+                        <label for="donationinput1" class="col-form-label">Quantity</label>
+                        <input type="text" id="donationinput1" class="form-control" placeholder="First Name"
+                          name="fname">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- --------------------Category And Sub Category Section------------------------------------------------ -->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="form-group">
+
+                        <label for="donationinput1" class="col-form-label">Category</label>
+                        <select class="form-control form-select" name="category">
+                          <option>Select > </option>
+                          <!-- {% for categories in categories %} -->
+                          <!-- <option>{{categories.title|title}}</option> -->
+                          <!-- {% endfor %} -->
+                          <option value="">Electronics</option>
+                          <option value="">Health & Beauty</option>
+                          <option value="">Jewellery</option>
+                          <option value="">Men's</option>
+                          <option value="">Women's</option>
+                          <option value="">Toy & kid's</option>
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="form-group">
+                        <label for="donationinput1" class="col-form-label">Sub-Category</label>
+                        <select class="form-control form-select" name="category">
+                          <option>Select > </option>
+                          <!-- {% for categories in categories %} -->
+                          <!-- <option>{{categories.title|title}}</option> -->
+                          <!-- {% endfor %} -->
+                          <option value="">Clothing</option>
+                          <option value="">Dhuti & Pajama</option>
+                          <option value="">Earring</option>
+                          <option value="">Shirt</option>
+                          <option value="">Three Peace</option>
+                          <option value="">Toy Car</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <!-- --------------------Short and Product Details Section------------------------------------------------ -->
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="form-group">
+                        <label for="donationinput7" class="col-form-label">Short Descriptino</label>
+                        <textarea id="donationinput7" rows="5" class="form-control square" name="message"
+                        placeholder="Product Short Descriptino"></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="form-group">
+                        <label for="donationinput7" class="col-form-label">Product Details</label>
+                        <textarea id="donationinput7" rows="5" class="form-control square" name="message"
+                          placeholder="Product Details"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+
+                                               <!-- --------------------Image And Price Section------------------------------------------------ -->
+                <hr>
+
+                <div class="row">
+                  <div class="col-md-4">
+                      <div class="card">
+                          <div class="form-group">
+                              <label for="donationinput4" class="col-form-label col-md-4">File Input</label>
+                              <div class="col-md-6">
+                                  <input type="file" name="product_image">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card">
+                          <div class="form-group mb-0">
+                              <label for="donationinput4" class="col-form-label col-md-6">Current Price</label>
+                              <div class="col-md-10">
+                                  <div class="input-group">
+                                      <span class="input-group-text">BDT</span>
+                                      <input class="form-control" type="number" name="current_price">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="col-md-4">
+                      <div class="card">
+                          <div class="form-group mb-0">
+                              <label for="donationinput4" class="col-form-label col-md-6">Discount Price</label>
+                              <div class="col-md-10">
+                                  <div class="input-group">
+                                      <span class="input-group-text">BDT</span>
+                                      <input class="form-control" type="number" name="discount_price">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                </div>
+
+              
+              <div class="form-actions center">
+                <button type="submit" class="btn btn-outline-primary">Add Product</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock body_content %}

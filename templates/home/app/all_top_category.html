@@ -1,0 +1,46 @@
+{% load static %}
+<!--====== All Category ======-->
+<div class="u-s-p-y-60" id="all-category">
+
+    <!--====== Section Intro ======-->
+    <div class="section__intro u-s-m-b-46">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="block">
+
+                        <span class="block__title">All TOP CATEGORY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Section Intro ======-->
+    
+    <!--====== Section Content ======-->
+    <div class="section__content">
+        <div class="container">
+            <div class="row">
+                {% for category in category %}
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 u-s-m-b-30">
+                    <div class="category-o">
+                        <div class="aspect aspect--bg-grey aspect--square category-o__img-wrap">
+
+                            <img class="aspect__img category-o__img"
+                                src="{% static 'home/images/category/product23.jpg' %}" alt="">
+                        </div>
+                        <div class="category-o__info">
+
+                            <a class="category-o__shop-now btn--e-white-brand"
+                                href="shop-side-version-2.html">{{category.title|upper|truncatechars:10}}</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!--====== End - Section Content ======-->
+</div>
+<!--====== All Category ======-->

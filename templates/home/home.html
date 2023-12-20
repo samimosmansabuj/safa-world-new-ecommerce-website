@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+
+{% block home_title %}
+<title>Safa World - Home</title>
+{% endblock home_title %}
+
+
+{% block app_body_content %}
+<!--====== App Content ======-->
+<div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div class="app-content">
+
+        <!--====== Anti Flash White Background ======-->
+        <div class="bg-anti-flash-white">
+
+            <!--====== White Container ======-->
+            <div class="white-container">
+
+                <!--====== Primary Slider ======-->
+                {% include './app/primary_slider.html' %}
+                <!--====== End - Primary Slider ======-->
+
+                <!--====== Section 1 All Category======-->
+                {% include './app/all_top_category.html' %}
+                <!--====== End - Section 1 All Category======-->
+
+
+                <!--====== Section 2 All Category Tab And Product======-->
+                {% include './app/all_category_tab.html' %}
+                <!--====== End - Section 2 All Category Tab And Product======-->
+
+
+                <!--====== Section 10 Our Service======-->
+                {% include './app/our_service.html' %}
+                <!--====== End - Section 10 Our Service======-->
+
+            </div>
+            <!--====== End - White Container ======-->
+        </div>
+        <!--====== End - Anti Flash White Background ======-->
+    </div>
+</div>
+<!--====== End - App Content ======-->
+{% endblock app_body_content %}

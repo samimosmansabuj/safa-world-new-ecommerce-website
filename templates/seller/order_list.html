@@ -1,0 +1,110 @@
+{% extends "./base.html" %}
+
+{% block content_header %}
+<div class="content-header row">
+  <div class="content-header-left col-md-4 col-12 mb-2">
+    <h3 class="content-header-title">Order List</h3>
+  </div>
+  <div class="content-header-right col-md-8 col-12">
+    <div class="breadcrumbs-top float-md-right">
+      <div class="breadcrumb-wrapper mr-1">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a>
+          </li>
+          <li class="breadcrumb-item active">Order
+          </li>
+          <li class="breadcrumb-item active">Order List
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content_header %}
+
+{% block content_type %}
+<!-- <div class="row">
+  <div class="col-12 mt-3 mb-1">
+    <h4 class="text-uppercase">Add Product</h4>
+    <p>Cards support a wide variety of content, including images, text, list groups, links, and more. Mix and match
+      multiple
+      content types to create the card you need.</p>
+  </div>
+</div> -->
+{% endblock content_type %}
+
+{% block body_content %}
+
+<div class="content-body"><!-- Basic Tables start -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Order List</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body">
+                        <p class="card-text">Use <code class="highlighter-rouge">.table-striped</code> to
+                            add zebra-striping to any table row within the <code
+                                class="highlighter-rouge">&lt;tbody&gt;</code>. This styling doesn't work in
+                            IE8 and below as <code>:nth-child</code> CSS selector isn't supported.</p>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Order ID</th>
+                                    <th scope="col">Customer Name</th>
+                                    <th scope="col">Total Amount</th>
+                                    <th scope="col">Paid</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Order Date</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">72489707</th>
+                                    <td>Samim Osman</td>
+                                    <td>900.00</td>
+                                    <td>False</td>
+                                    <td>Delivered</td>
+                                    <td>Dec. 2, 2023, 2:31 p.m.</td>
+                                    <td>
+                                        <a href=""></a>
+                                        <a href=""></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- Basic Tables end -->  
+</div>
+{% endblock body_content %}

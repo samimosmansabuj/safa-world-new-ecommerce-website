@@ -1,0 +1,129 @@
+{% extends 'base/base.html' %}
+
+{% block home_title %}
+<title>Safa World - Home</title>
+{% endblock home_title %}
+
+
+{% block app_body_content %}
+<div class="container" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+    <div class="app-content">
+
+        <!--====== Section 1 ======-->
+        <div class="u-s-p-y-60">
+            <!--====== Section Content ======-->
+            <div class="section__content">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <div class="breadcrumb__wrap">
+                            <ul class="breadcrumb__list">
+                                <li class="has-separator">
+
+                                    <a href="{% url 'home' %}">Home</a></li>
+                                <li class="is-marked">
+
+                                    <a href="{% url 'login' %}">Signin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====== End - Section 1 ======-->
+
+
+        <!--====== Section 2 ======-->
+        <div class="u-s-p-b-60">
+
+            <!--====== Section Intro ======-->
+            <div class="section__intro u-s-m-b-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section__text-wrap">
+                                <h1 class="section__heading u-c-secondary">ALREADY REGISTERED?</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--====== End - Section Intro ======-->
+
+
+            <!--====== Section Content ======-->
+            <div class="section__content">
+                <div class="container">
+                    <div class="row row--center">
+                        <div class="col-lg-6 col-md-8 u-s-m-b-30">
+                            <div class="l-f-o">
+                                <div class="l-f-o__pad-box">
+                                    <h1 class="gl-h1">I'M NEW CUSTOMER</h1>
+                                    <div class="u-s-m-b-15">
+                                        <a class="l-f-o__create-link btn--e-transparent-brand-b-2" href="{% url 'registration' %}">CREATE AN ACCOUNT</a>
+                                    </div>
+
+                                    <h1 class="gl-h1">SIGNIN</h1>
+
+                                    <span class="gl-text u-s-m-b-30">If you have an account with us, please log in.</span>
+
+                                    {% for messages in messages %}
+                                    {% if messages %}
+                                    <div class="alert alert-{{messages.tags}} alert-dismissible fade show" role="alert">
+                                        <strong>Dear User!</strong> {{messages}}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                    
+                                    <form class="l-f-o__form" method="POST" novalidate>
+                                        {% csrf_token %}
+                                        <div class="u-s-m-b-30">
+                                            <label class="gl-label" for="login-email">USERNAME *</label>
+
+                                            <!-- <input class="input-text input-text--primary-style" type="text" id="login-email" placeholder="Enter E-mail"> -->
+                                            {{form.username}}
+                                            <!-- {{loginform}} -->
+                                        </div>
+                                        <div class="u-s-m-b-30">
+
+                                            <label class="gl-label" for="login-password">PASSWORD *</label>
+
+                                            <!-- <input class="input-text input-text--primary-style" type="text" id="login-password" placeholder="Enter Password"> -->
+                                            {{form.password}}
+                                        </div>
+                                        <div class="gl-inline">
+                                            <div class="u-s-m-b-30">
+
+                                                <button class="btn btn--e-transparent-brand-b-2" type="submit">LOGIN</button></div>
+                                            <div class="u-s-m-b-30">
+
+                                                <a class="gl-link" href="{% url 'forget_password' %}">Lost Your Password?</a></div>
+                                        </div>
+                                        <div class="u-s-m-b-30">
+
+                                            <!--====== Check Box ======-->
+                                            <div class="check-box">
+
+                                                <input type="checkbox" id="remember-me">
+                                                <div class="check-box__state check-box__state--primary">
+
+                                                    <label class="check-box__label" for="remember-me">Remember Me</label></div>
+                                            </div>
+                                            <!--====== End - Check Box ======-->
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--====== End - Section Content ======-->
+        </div>
+        <!--====== End - Section 2 ======-->
+    </div>
+</div>
+{% endblock app_body_content %}

@@ -1,0 +1,74 @@
+{% load static %}
+<li class="has-dropdown">
+
+    <a class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
+
+        <span class="total-item-round">2</span></a>
+
+    <!--====== Dropdown ======-->
+
+    <span class="js-menu-toggle"></span>
+    <div class="mini-cart">
+
+        <!--====== Mini Product Container ======-->
+        <div class="mini-product-container gl-scroll u-s-m-b-15">
+
+            <!--====== Card for mini cart ======-->
+            <div class="card-mini-product">
+                <div class="mini-product">
+                    <div class="mini-product__image-wrapper">
+
+                        <a class="mini-product__link" href="">
+
+                            <img class="u-img-fluid"
+                                src="{% static 'home/images/product/electronic/product3.jpg' %}"
+                                alt=""></a>
+                    </div>
+                    <div class="mini-product__info-wrapper">
+
+                        <span class="mini-product__category">
+
+                            <a
+                                href="">Electronics</a></span>
+
+                        <span class="mini-product__name">
+
+                            <a href="">Yellow Wireless
+                                Headphone</a></span>
+
+                        <span class="mini-product__quantity">1 x</span>
+
+                        <span class="mini-product__price">$8</span>
+                    </div>
+                </div>
+
+                <a class="mini-product__delete-link far fa-trash-alt"></a>
+            </div>
+            <!--====== End - Card for mini cart ======-->
+
+        </div>
+        <!--====== End - Mini Product Container ======-->
+
+
+        <!--====== Mini Product Statistics ======-->
+        <div class="mini-product-stat">
+            <div class="mini-total">
+
+                <span class="subtotal-text">SUBTOTAL</span>
+
+                <span class="subtotal-value">$16</span>
+            </div>
+            <div class="mini-action">
+
+                <a class="mini-link btn--e-brand-b-2"
+                    href="{% url 'checkout' %}">PROCEED
+                    TO CHECKOUT</a>
+
+                <a class="mini-link btn--e-transparent-secondary-b-2"
+                    href="{% url 'cart' %}">VIEW CART</a>
+            </div>
+        </div>
+        <!--====== End - Mini Product Statistics ======-->
+    </div>
+    <!--====== End - Dropdown ======-->
+</li>
